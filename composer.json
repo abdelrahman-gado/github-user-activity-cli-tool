@@ -6,11 +6,50 @@
             "Gado\\Guact\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "abdelrahman gado",
             "email": "gadoua50@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "guzzlehttp/guzzle": "^7.13"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "phpstan/phpstan": "^2.2",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "phpstan/phpstan-mockery": "^2.0",
+        "phpunit/phpunit": "^12.5",
+        "mockery/mockery": "^1.6",
+        "rector/rector": "^2.5",
+        "captainhook/captainhook": "^5.29",
+        "captainhook/hook-installer": "^1.0",
+        "brianium/paratest": "^7.20",
+        "dg/bypass-finals": "^1.10"
+    },
+    "config": {
+        "allow-plugins": {
+            "captainhook/hook-installer": true
+        }
+    },
+    "scripts": {
+        "style:check": "php-cs-fixer check -vvv --diff",
+        "style:fix": "php-cs-fixer fix",
+        "stan:check": "phpstan analyse",
+        "rector:check": "rector process --dry-run --debug",
+        "rector:fix": "rector process --debug",
+        "test": [
+            "@style:check",
+            "@stan:check",
+            "@rector:check",
+            "phpunit"
+        ]
+    }
 }
