@@ -1,0 +1,16 @@
+{
+    "name": "gado/guact",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Gado\\Guact\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "abdelrahman gado",
+            "email": "gadoua50@gmail.com"
+        }
+    ],
+    "require": {}
+}
