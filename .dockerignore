@@ -1,0 +1,11 @@
+.git
+.github
+.gitignore
+vendor/
+composer.phar
+*.md
+*.log
+.DS_Store
+.idea/
+.vscode/
+
