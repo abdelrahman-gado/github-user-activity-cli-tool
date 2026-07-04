@@ -21,7 +21,7 @@ final readonly class GithubActivityRequest extends GithubRequestAbstract
         try {
             $response = $client->request(
                 'GET',
-                $this->username . self::EVENTS_ENDPOINT,
+                urlencode($this->username) . self::EVENTS_ENDPOINT,
                 ['query' => ['per_page' => self::MAX_ITEMS_PER_PAGE, 'page' => $page]],
             );
 
