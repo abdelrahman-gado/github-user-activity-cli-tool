@@ -33,7 +33,8 @@
         "captainhook/captainhook": "^5.29",
         "captainhook/hook-installer": "^1.0",
         "brianium/paratest": "^7.20",
-        "dg/bypass-finals": "^1.10"
+        "dg/bypass-finals": "^1.10",
+        "zoltanka/bypass-readonly": "^0.0.4"
     },
     "config": {
         "allow-plugins": {
@@ -46,6 +47,7 @@
         "stan:check": "phpstan analyse",
         "rector:check": "rector process --dry-run --debug",
         "rector:fix": "rector process --debug",
+        "run:tests": "paratest",
         "test": [
             "@style:check",
             "@stan:check",

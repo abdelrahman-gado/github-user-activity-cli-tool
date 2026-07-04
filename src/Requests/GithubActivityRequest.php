@@ -5,34 +5,28 @@ namespace Gado\Guact\Requests;
 use Gado\Guact\Abstracts\GithubRequestAbstract;
 use GuzzleHttp\Client;
 
-final readonly class GithubActivityRequest extends GithubRequestAbstract
+final class GithubActivityRequest extends GithubRequestAbstract
 {
     public function __construct(
-        private string $username,
+        private readonly string $username,
+        private readonly Client $client = new Client(['base_uri' => self::BASE_URL, 'timeout' => 15]),
     ) {}
 
     /**
-     * @return array<string, mixed>|null
+     * @return array<int, mixed>|null
      */
     public function request(int $page = 1): ?array
     {
-        $client = new Client(['base_uri' => self::BASE_URL, 'timeout' => 15]);
-
         try {
-            $response = $client->request(
+            $response = $this->client->request(
                 'GET',
                 urlencode($this->username) . self::EVENTS_ENDPOINT,
                 ['query' => ['per_page' => self::MAX_ITEMS_PER_PAGE, 'page' => $page]],
             );
 
             if ($response->getStatusCode() === 200) {
-                $resultItems =  json_decode($response->getBody()->getContents(), true);
-                if (!is_array($resultItems)) {
-                    return null;
-                }
-
                 // @phpstan-ignore return.type
-                return $resultItems;
+                return json_decode($response->getBody()->getContents(), true);
             }
 
             return null;
