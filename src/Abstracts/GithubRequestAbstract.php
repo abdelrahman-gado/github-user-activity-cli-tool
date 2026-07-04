@@ -2,7 +2,7 @@
 
 namespace Gado\Guact\Abstracts;
 
-abstract readonly class GithubRequestAbstract
+abstract class GithubRequestAbstract
 {
     public const string BASE_URL = 'https://api.github.com/users/';
 
@@ -11,7 +11,7 @@ abstract readonly class GithubRequestAbstract
     public const int MAX_ITEMS_PER_PAGE = 30;
 
     /**
-     * @return array<string, mixed>|null
+     * @return array<int, mixed>|null
      */
     abstract public function request(int $page = 1): ?array;
 }

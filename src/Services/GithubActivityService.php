@@ -2,13 +2,13 @@
 
 namespace Gado\Guact\Services;
 
+use Gado\Guact\Abstracts\GithubRequestAbstract;
 use Gado\Guact\Interfaces\TransformerInterface;
-use Gado\Guact\Requests\GithubActivityRequest;
 
 final readonly class GithubActivityService
 {
     public function __construct(
-        private GithubActivityRequest $githubActivityRequest,
+        private GithubRequestAbstract $githubRequestAbstract,
         private TransformerInterface $githubActivityTransformer,
     ) {}
 
@@ -17,7 +17,7 @@ final readonly class GithubActivityService
      */
     public function getActivity(int $page = 1): array
     {
-        $data = $this->githubActivityRequest->request($page);
+        $data = $this->githubRequestAbstract->request($page);
         if (!$data) {
             return [];
         }

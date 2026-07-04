@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a27f3394ba70a8f22688f9231aa8f18",
+    "content-hash": "9c8022f740969d440c71e9a74a2d5c43",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -6942,6 +6942,45 @@
                 }
             ],
             "time": "2025-12-08T11:19:18+00:00"
+        },
+        {
+            "name": "zoltanka/bypass-readonly",
+            "version": "0.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zoltanka/bypass-readonly.git",
+                "reference": "7e9a6863f557bc17e74854cd0619e3c4d187b794"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zoltanka/bypass-readonly/zipball/7e9a6863f557bc17e74854cd0619e3c4d187b794",
+                "reference": "7e9a6863f557bc17e74854cd0619e3c4d187b794",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Zfekete\\BypassReadonly\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Z.Fekete",
+                    "email": "fekzol.13ker@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/zoltanka/bypass-readonly/issues",
+                "source": "https://github.com/zoltanka/bypass-readonly/tree/0.0.4"
+            },
+            "time": "2023-03-31T09:06:39+00:00"
         }
     ],
     "aliases": [],
@@ -6951,7 +6990,9 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
+    "platform": {
+        "php": "^8.3"
+    },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"
 }

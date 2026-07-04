@@ -8,7 +8,7 @@ use Gado\Guact\Interfaces\TransformerInterface;
 final readonly class GithubActivityTransformer implements TransformerInterface
 {
     /**
-     * @param array<string, mixed> $data
+     * @param array<int, mixed> $data
      * @return array{id: string, actor: string, type: string, repo: string, created_at: string}[]
      */
     public function transform(array $data): array
@@ -21,7 +21,7 @@ final readonly class GithubActivityTransformer implements TransformerInterface
      * @param array{id: string, actor: array{display_login: string}, type: string, repo: array{name: string}, created_at: string} $event
      * @return array{id: string, actor: string, type: string, repo: string, created_at: string}
      */
-    public function fromEventToActivity(array $event): array
+    private function fromEventToActivity(array $event): array
     {
         return [
             'id' => $event['id'],
