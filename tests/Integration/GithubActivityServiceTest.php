@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 final class GithubActivityServiceTest extends TestCase
 {
     #[Test]
-    public function test_getActivity_returns_array(): void
+    public function test_getActivity_returns_non_empty_array(): void
     {
         $githubActivityService = new GithubActivityService(
             new GithubActivityRequest('abdelrahman-gado'),
@@ -29,7 +29,7 @@ final class GithubActivityServiceTest extends TestCase
 
 
     #[Test]
-    public function test_getActivity_returns_empty_array_if_no_data(): void
+    public function test_getActivity_returns_empty_empty_array_if_no_data(): void
     {
         $githubActivityService = new GithubActivityService(
             new GithubActivityRequest('abdelrahman-gado'),
@@ -41,7 +41,7 @@ final class GithubActivityServiceTest extends TestCase
     }
 
     #[Test]
-    public function test_getActivity_returns_empty_array_if_invalid_username(): void
+    public function test_getActivity_returns_empty_empty_array_if_invalid_username(): void
     {
         $githubActivityService = new GithubActivityService(
             new GithubActivityRequest('00invalid-username'),
