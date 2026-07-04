@@ -21,7 +21,7 @@ final readonly class GithubActivityOutputService
      */
     private static function outputActivity(array $activity): void
     {
-        $createAt = new DateTime($activity['created_at']);
+        $createAt = new DateTime($activity['created_at'] ?? 'now');
         echo sprintf('ID: %s ', $activity['id']);
         echo sprintf('Actor: %s ', $activity['actor']);
         echo sprintf('Type: %s ', $activity['type']);
