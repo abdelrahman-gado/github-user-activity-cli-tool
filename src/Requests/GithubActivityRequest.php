@@ -30,7 +30,7 @@ final readonly class GithubActivityRequest extends GithubRequestAbstract
                 if (!is_array($resultItems)) {
                     return null;
                 }
-                
+
                 // @phpstan-ignore return.type
                 return $resultItems;
             }

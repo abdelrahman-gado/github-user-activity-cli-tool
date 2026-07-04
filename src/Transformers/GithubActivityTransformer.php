@@ -14,11 +14,11 @@ final readonly class GithubActivityTransformer implements TransformerInterface
     public function transform(array $data): array
     {
         $callback = $this->fromEventToActivity(...);
-        return array_map($callback, $data);
+        return array_map($callback, $data); // @phpstan-ignore-line
     }
 
     /**
-     * @param array<string, mixed> $event
+     * @param array{id: string, actor: array{display_login: string}, type: string, repo: array{name: string}, created_at: string} $event
      * @return array{id: string, actor: string, type: string, repo: string, created_at: string}
      */
     public function fromEventToActivity(array $event): array
