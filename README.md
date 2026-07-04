@@ -1,6 +1,6 @@
 # github-user-activity-cli-tool
 - Simple command line interface (CLI) to fetch the recent activity of a GitHub user and display it in the terminal.
-- This project for [text](https://roadmap.sh/projects/github-user-activity)
+- This project for [github-user-activity-cli-project](https://roadmap.sh/projects/github-user-activity)
 
 ## Prerequisites
 1. Docker
