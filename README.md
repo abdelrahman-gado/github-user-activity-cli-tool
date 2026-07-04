@@ -14,7 +14,6 @@
 
 
 ## Notes
-## Notes
 In this project, i used:
 1. PHP v8.3
 2. Composer v2.10
